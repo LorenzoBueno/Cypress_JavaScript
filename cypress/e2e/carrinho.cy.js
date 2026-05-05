@@ -8,7 +8,7 @@ describe('Carrinho', () => {
 
         //act
         cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
-        cy.screenshot("Produto adicionado ao carrinho")
+        cy.screenshot("Product added")
 
         //assert
         cy.get('[data-test="shopping-cart-badge"]')
@@ -22,26 +22,7 @@ describe('Carrinho', () => {
         cy.contains('Sauce Labs Backpack').should('be.visible')
     })
 
-    it('Remove product from cart (Success)', () => {
-
-        // arrange
-        cy.visit('https://www.saucedemo.com/')
-        cy.get('[data-test="username"').type('standard_user')
-        cy.get('[data-test="password"]').type('secret_sauce')
-        cy.get('[data-test="login-button"]').click()
-        cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
-        cy.get('[data-test="shopping-cart-badge"]').should('be.visible')
-
-        //act
-        cy.get('[data-test="remove-sauce-labs-backpack"]').click()
-        cy.screenshot("Produto Removido")
-
-        //assert
-        cy.get('[data-test="shopping-cart-badge"]').should('not.exist')
-
-    })
-
-    it('Add product (Failure)', () => {
+    it('Add product to cart (Failure)', () => {
 
         // arrange
         cy.visit('https://www.saucedemo.com/')
@@ -59,7 +40,26 @@ describe('Carrinho', () => {
 
     })
 
-    it('Remove product from cart(Failure)', () => {
+    it('Remove product from cart (Success)', () => {
+
+        // arrange
+        cy.visit('https://www.saucedemo.com/')
+        cy.get('[data-test="username"').type('standard_user')
+        cy.get('[data-test="password"]').type('secret_sauce')
+        cy.get('[data-test="login-button"]').click()
+        cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
+        cy.get('[data-test="shopping-cart-badge"]').should('be.visible')
+
+        //act
+        cy.get('[data-test="remove-sauce-labs-backpack"]').click()
+        cy.screenshot("Product Removed")
+
+        //assert
+        cy.get('[data-test="shopping-cart-badge"]').should('not.exist')
+
+    })
+
+    it('Remove product from cart (Failure)', () => {
 
         //arrange
         cy.visit('https://www.saucedemo.com/')
@@ -67,6 +67,7 @@ describe('Carrinho', () => {
         cy.get('[data-test="password"]').type('secret_sauce')
         cy.get('[data-test="login-button"]').click()
         cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
+        cy.get('[data-test="shopping-cart-badge"]').should('be.visible')
 
         // act
 

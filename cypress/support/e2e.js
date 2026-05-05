@@ -15,6 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import 'cypress-mochawesome-reporter/register'
 
 // Esconde requisições fetch/XHR do painel de comandos
 const origLog = Cypress.log.bind(Cypress)
