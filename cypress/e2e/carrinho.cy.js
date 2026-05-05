@@ -8,7 +8,7 @@ describe('Carrinho', () => {
 
         //act
         cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
-        cy.screenshot("Produto adicionado ao carrinho")
+        cy.screenshot("Product added")
 
         //assert
         cy.get('[data-test="shopping-cart-badge"]')
@@ -34,7 +34,7 @@ describe('Carrinho', () => {
 
         //act
         cy.get('[data-test="remove-sauce-labs-backpack"]').click()
-        cy.screenshot("Produto Removido")
+        cy.screenshot("Product Removed")
 
         //assert
         cy.get('[data-test="shopping-cart-badge"]').should('not.exist')

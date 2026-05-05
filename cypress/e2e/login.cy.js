@@ -29,7 +29,7 @@ describe('Login', () => {
         cy.get('[data-test="password"]').type('senha_invalida')
         cy.get('[data-test="login-button"]').click()
 
-        cy.screenshot("Erro: Credenciais Inválidas")
+        cy.screenshot("Error: Invalid Credencials")
 
         //assert
 
