@@ -22,6 +22,24 @@ describe('Carrinho', () => {
         cy.contains('Sauce Labs Backpack').should('be.visible')
     })
 
+    it('Add product to cart (Failure)', () => {
+
+        // arrange
+        cy.visit('https://www.saucedemo.com/')
+        cy.get('[data-test="username"').type('problem_user')
+        cy.get('[data-test="password"]').type('secret_sauce', { force: true })
+        cy.get('[data-test="login-button"]').click()
+
+
+        //act
+        cy.get('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click()
+        cy.screenshot('Product not added')
+
+        //assert
+        cy.get('[data-test="shopping-cart-badge"]').should('not.exist')
+
+    })
+
     it('Remove product from cart (Success)', () => {
 
         // arrange
@@ -41,25 +59,7 @@ describe('Carrinho', () => {
 
     })
 
-    it('Add product (Failure)', () => {
-
-        // arrange
-        cy.visit('https://www.saucedemo.com/')
-        cy.get('[data-test="username"').type('problem_user')
-        cy.get('[data-test="password"]').type('secret_sauce', { force: true })
-        cy.get('[data-test="login-button"]').click()
-
-
-        //act
-        cy.get('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click()
-        cy.screenshot('Product not added')
-
-        //assert
-        cy.get('[data-test="shopping-cart-badge"]').should('not.exist')
-
-    })
-
-    it('Remove product from cart(Failure)', () => {
+    it('Remove product from cart (Failure)', () => {
 
         //arrange
         cy.visit('https://www.saucedemo.com/')
