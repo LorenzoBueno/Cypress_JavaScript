@@ -1,8 +1,10 @@
 describe('Login', () => {
-    it('Log in (Success)', () => {
 
-        // arrange
+    beforeEach(() => {
         cy.visit('https://www.saucedemo.com/')
+    })
+
+    it('Log in (Success)', () => {
 
         // act
         cy.get('[data-test="username"').type('standard_user')
@@ -17,8 +19,6 @@ describe('Login', () => {
     })
 
     it('Log in (Failure)', () => {
-        // arrange
-        cy.visit('https://www.saucedemo.com/')
 
         // act
         cy.get('[data-test="username"').type('invalido')
