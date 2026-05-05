@@ -46,12 +46,13 @@ describe('Carrinho', () => {
         // arrange
         cy.visit('https://www.saucedemo.com/')
         cy.get('[data-test="username"').type('problem_user')
-        cy.get('[data-test="password"]').type('secret_sauce')
+        cy.get('[data-test="password"]').type('secret_sauce', { force: true })
         cy.get('[data-test="login-button"]').click()
 
 
         //act
         cy.get('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click()
+        cy.screenshot('Product not added')
 
         //assert
         cy.get('[data-test="shopping-cart-badge"]').should('not.exist')
@@ -70,10 +71,17 @@ describe('Carrinho', () => {
         // act
 
         cy.get('[data-test="remove-sauce-labs-backpack"]').click()
+        cy.screenshot('Product not removed')
 
         //assert
 
         cy.get('[data-test="remove-sauce-labs-backpack"]').should('contain.text', 'Remove')
+        cy.get('[data-test="shopping-cart-badge"]')
+            .should(
+                "contain.text",
+                '1'
+            )
+            .and('be.visible') 
 
 
     })
