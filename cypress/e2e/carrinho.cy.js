@@ -1,5 +1,5 @@
 describe('Carrinho', () => {
-    it('Adicionar produto ao carrinho com sucesso', () => {
+    it('Add Product to cart (Success)', () => {
         // arrange
         cy.visit('https://www.saucedemo.com/')
         cy.get('[data-test="username"').type('standard_user')
@@ -24,7 +24,7 @@ describe('Carrinho', () => {
         cy.contains('Sauce Labs Backpack').should('be.visible')
     })
 
-    it('Remover produto do carrinho com sucesso', () => {
+    it('Remove product from cart (Success)', () => {
         // arrange
         cy.visit('https://www.saucedemo.com/')
         cy.get('[data-test="username"').type('standard_user')

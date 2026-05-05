@@ -1,5 +1,5 @@
 describe('Login', () => {
-    it('Realizar login com sucesso', () => {
+    it('Log in (Success)', () => {
 
         // arrange
 
@@ -20,7 +20,7 @@ describe('Login', () => {
 
     })
 
-    it('Realizar login com fracasso', () => {
+    it('Log in (Failure)', () => {
         // arrange
         cy.visit('https://www.saucedemo.com/')
 
