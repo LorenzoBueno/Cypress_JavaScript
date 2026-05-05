@@ -1,4 +1,4 @@
-describe('Carrinho', () => {
+describe('Cart', () => {
 
     beforeEach(() => {
         cy.visit('https://www.saucedemo.com/')
