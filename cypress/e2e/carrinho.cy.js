@@ -1,7 +1,12 @@
 describe('Carrinho', () => {
+
+    beforeEach(() => {
+        cy.visit('https://www.saucedemo.com/')
+    })
+
+
     it('Add Product to cart (Success)', () => {
         // arrange
-        cy.visit('https://www.saucedemo.com/')
         cy.get('[data-test="username"').type('standard_user')
         cy.get('[data-test="password"]').type('secret_sauce')
         cy.get('[data-test="login-button"]').click()
@@ -25,7 +30,6 @@ describe('Carrinho', () => {
     it('Add product to cart (Failure)', () => {
 
         // arrange
-        cy.visit('https://www.saucedemo.com/')
         cy.get('[data-test="username"').type('problem_user')
         cy.get('[data-test="password"]').type('secret_sauce', { force: true })
         cy.get('[data-test="login-button"]').click()
@@ -43,7 +47,6 @@ describe('Carrinho', () => {
     it('Remove product from cart (Success)', () => {
 
         // arrange
-        cy.visit('https://www.saucedemo.com/')
         cy.get('[data-test="username"').type('standard_user')
         cy.get('[data-test="password"]').type('secret_sauce')
         cy.get('[data-test="login-button"]').click()
@@ -62,7 +65,6 @@ describe('Carrinho', () => {
     it('Remove product from cart (Failure)', () => {
 
         //arrange
-        cy.visit('https://www.saucedemo.com/')
         cy.get('[data-test="username"').type('problem_user')
         cy.get('[data-test="password"]').type('secret_sauce')
         cy.get('[data-test="login-button"]').click()
