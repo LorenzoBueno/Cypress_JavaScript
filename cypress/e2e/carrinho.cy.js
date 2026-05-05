@@ -70,12 +70,10 @@ describe('Carrinho', () => {
         cy.get('[data-test="shopping-cart-badge"]').should('be.visible')
 
         // act
-
         cy.get('[data-test="remove-sauce-labs-backpack"]').click()
         cy.screenshot('Product not removed')
 
         //assert
-
         cy.get('[data-test="remove-sauce-labs-backpack"]').should('contain.text', 'Remove')
         cy.get('[data-test="shopping-cart-badge"]')
             .should(
@@ -83,7 +81,6 @@ describe('Carrinho', () => {
                 '1'
             )
             .and('be.visible') 
-
 
     })
 })
