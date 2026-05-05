@@ -67,6 +67,7 @@ describe('Carrinho', () => {
         cy.get('[data-test="password"]').type('secret_sauce')
         cy.get('[data-test="login-button"]').click()
         cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
+        cy.get('[data-test="shopping-cart-badge"]').should('be.visible')
 
         // act
 
