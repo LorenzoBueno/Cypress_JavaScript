@@ -1,88 +1,63 @@
+import Login from '../pages/login/index'
+import Inventory from '../pages/inventory/index'
+import inventory from '../pages/inventory/index'
+
 describe('Cart', () => {
 
     beforeEach(() => {
-        cy.visit('https://www.saucedemo.com/')
+        Login.visitPage()
     })
 
 
     it('Add Product to cart (Success)', () => {
         // arrange
-        cy.get('[data-test="username"').type('standard_user')
-        cy.get('[data-test="password"]').type('secret_sauce')
-        cy.get('[data-test="login-button"]').click()
+        Login.validCredentials()
 
         //act
-        cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
-        cy.screenshot("Product added")
+        Inventory.addProduct()
 
         //assert
-        cy.get('[data-test="shopping-cart-badge"]')
-            .should(
-                "contain.text",
-                '1'
-            )
-            .and('be.visible') 
-
-        cy.get('[data-test="shopping-cart-link"]').click()
-        cy.contains('Sauce Labs Backpack').should('be.visible')
+        Inventory.validateAddProduct()
     })
 
     it('Add product to cart (Failure)', () => {
 
         // arrange
-        cy.get('[data-test="username"').type('problem_user')
-        cy.get('[data-test="password"]').type('secret_sauce', { force: true })
-        cy.get('[data-test="login-button"]').click()
-
+        Login.problemCredentials()
 
         //act
-        cy.get('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]').click()
-        cy.screenshot('Product not added')
+        Inventory.addProblemProduct()
 
         //assert
-        cy.get('[data-test="shopping-cart-badge"]').should('not.exist')
+        Inventory.validateProblemProduct()
 
     })
 
     it('Remove product from cart (Success)', () => {
 
         // arrange
-        cy.get('[data-test="username"').type('standard_user')
-        cy.get('[data-test="password"]').type('secret_sauce')
-        cy.get('[data-test="login-button"]').click()
-        cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
-        cy.get('[data-test="shopping-cart-badge"]').should('be.visible')
+        Login.validCredentials()
+        Inventory.addProduct()
+        Inventory.validateAddProduct()
 
         //act
-        cy.get('[data-test="remove-sauce-labs-backpack"]').click()
-        cy.screenshot("Product Removed")
-
+        Inventory.removeProduct()
+        
         //assert
-        cy.get('[data-test="shopping-cart-badge"]').should('not.exist')
-
+        Inventory.validateRemoveProduct()
     })
 
     it('Remove product from cart (Failure)', () => {
 
         //arrange
-        cy.get('[data-test="username"').type('problem_user')
-        cy.get('[data-test="password"]').type('secret_sauce')
-        cy.get('[data-test="login-button"]').click()
-        cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
-        cy.get('[data-test="shopping-cart-badge"]').should('be.visible')
+        Login.problemCredentials()
+        Inventory.addProduct()
+        Inventory.validateAddProduct()
 
         // act
-        cy.get('[data-test="remove-sauce-labs-backpack"]').click()
-        cy.screenshot('Product not removed')
+        Inventory.removeProduct()
 
         //assert
-        cy.get('[data-test="remove-sauce-labs-backpack"]').should('contain.text', 'Remove')
-        cy.get('[data-test="shopping-cart-badge"]')
-            .should(
-                "contain.text",
-                '1'
-            )
-            .and('be.visible') 
-
+        Inventory.validateRemoveProblemProduct()
     })
 })

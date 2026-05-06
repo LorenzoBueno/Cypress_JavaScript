@@ -1,37 +1,27 @@
+import Login from '../pages/login/index'
+import Inventory from '../pages/inventory/index'
+
 describe('Login', () => {
 
     beforeEach(() => {
-        cy.visit('https://www.saucedemo.com/')
+        Login.visitPage()
     })
 
     it('Log in (Success)', () => {
 
         // act
-        cy.get('[data-test="username"').type('standard_user')
-        cy.get('[data-test="password"]').type('secret_sauce')
-        cy.get('[data-test="login-button"]').click()
-        cy.screenshot('Login')
+        Login.validCredentials()
 
         // assert
-        cy.url().should('eq', 'https://www.saucedemo.com/inventory.html')
-
-
+        Inventory.validateUrl()
     })
 
     it('Log in (Failure)', () => {
 
         // act
-        cy.get('[data-test="username"').type('invalido')
-        cy.get('[data-test="password"]').type('senha_invalida')
-        cy.get('[data-test="login-button"]').click()
-        cy.screenshot("Error: Invalid Credencials")
+        Login.invalidCredentials()
 
         //assert
-        cy.url().should('eq', 'https://www.saucedemo.com/')
-        cy.get('[data-test="error"]')
-            .should(
-                'contain.text',
-                'Epic sadface: Username and password do not match any user in this service'
-            )
+        Login.validateInvalidCredentials()
     })
 })
