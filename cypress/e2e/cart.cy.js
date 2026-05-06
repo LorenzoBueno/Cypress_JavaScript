@@ -1,6 +1,5 @@
 import Login from '../pages/login/index'
 import Inventory from '../pages/inventory/index'
-import inventory from '../pages/inventory/index'
 
 describe('Cart', () => {
 
