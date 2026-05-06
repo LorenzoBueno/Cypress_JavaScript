@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "ochrome": "npx cypress open -- browser chrome",
+    "rchrome": "npx cypress run -- browser chrome",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
