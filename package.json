@@ -6,7 +6,9 @@
   "scripts": {
     "ochrome": "npx cypress open -- browser chrome",
     "rchrome": "npx cypress run -- browser chrome",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open:dev" : "cypress open --config-file config-dev.js --browser chrome",
+    "cy:open:qa" : "cypress open --config-file config-qa.js --browser chrome"
   },
   "keywords": [],
   "author": "",
