@@ -43,7 +43,7 @@ cypress/
 ├── pages/            # Page objects
 ├── fixtures/         # Test data
 ├── reports/          # Generated test reports
-├── screenshots/      # Captured on test failure (auto-deleted before each run)
+├── screenshots/      # Captured on test failure and success (auto-deleted before each run)
 └── support/          # Commands and global configuration
 config-dev.js         # Dev environment configuration
 config-qa.js          # QA environment configuration
@@ -54,8 +54,8 @@ env-example.txt       # Environment variables reference
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/LorenzoBueno/Cypress-JavaScript---SwagLabs.git
-cd Cypress-JavaScript---SwagLabs
+git clone https://github.com/LorenzoBueno/Cypress_JavaScript.git
+cd Cypress_JavaScript
 ```
 
 ### 2. Install dependencies
@@ -70,6 +70,7 @@ This will install all required packages:
 - cypress-mochawesome-reporter
 - cypress-multi-reporters
 - mocha-junit-reporter
+> Note that Node.js will not be installed, and must be downloaded in [Node.js](https://nodejs.org/) site
 
 ### 3. Set up environment variables
 
