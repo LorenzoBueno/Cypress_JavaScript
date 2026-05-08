@@ -20,3 +20,6 @@ npm-debug.log*
 
 # Cypress cache
 .cypress-cache/
+
+#env
+.env.dev

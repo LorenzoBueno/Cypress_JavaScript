@@ -7,8 +7,8 @@ class Login{
     }
 
     validCredentials(){
-        cy.get(e.username).type('standard_user')
-        cy.get(e.password).type('secret_sauce')
+        cy.get(e.username).type(Cypress.env('username'))
+        cy.get(e.password).type(Cypress.env('password'))
         cy.get(e.loginButton).click()
     }
 
@@ -20,7 +20,7 @@ class Login{
 
     problemCredentials(){
         cy.get(e.username).type('problem_user')
-        cy.get(e.password).type('secret_sauce')
+        cy.get(e.password).type(Cypress.env('password'))
         cy.get(e.loginButton).click()
     }
 

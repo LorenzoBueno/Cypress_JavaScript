@@ -7,8 +7,10 @@
     "ochrome": "npx cypress open -- browser chrome",
     "rchrome": "npx cypress run -- browser chrome",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:open:dev" : "cypress open --config-file config-dev.js --browser chrome",
-    "cy:open:qa" : "cypress open --config-file config-qa.js --browser chrome"
+    "cy:open:dev": "cypress open --config-file config-dev.js --browser chrome",
+    "cy:open:qa": "cypress open --config-file config-qa.js --browser chrome",
+    "cy:run:dev": "cypress run --config-file config-dev.js --browser chrome",
+    "cy:run:qa": "cypress run --config-file config-qa.js --browser chrome"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +20,7 @@
     "cypress": "^15.14.2",
     "cypress-mochawesome-reporter": "^4.0.2",
     "cypress-multi-reporters": "^2.0.5",
+    "dotenv": "^17.4.2",
     "mocha-junit-reporter": "^2.2.1"
   }
 }
