@@ -104,4 +104,4 @@ npm run cy:run:qa
 ### 5. Reports
 
 After running in run mode, test reports are automatically generated in `cypress/reports/`.
-Screenshots are taken on test failure and deleted automatically before each new run.
+Screenshots are taken on test failure and success, and are deleted automatically before each new run.
