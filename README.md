@@ -22,3 +22,7 @@ making it an ideal playground for learning automation concepts without affecting
 - Learn Cypress fundamentals: commands, assertions, selectors, and test structure
 - Practice Git workflows: commits, branching, and push/pull to a remote repository
 - Build a portfolio of automated tests as I progress
+
+## 🚀 Getting Started
+
+To run this project locally, see the [Contributing Guide](CONTRIBUTING.md).
