@@ -77,7 +77,7 @@ CYPRESS_PASSWORD=secret_sauce
 ```
 
 > ⚠️ The `.env` file is ignored by Git and should never be committed.
-> The .env file is ignored by Git and should never be committed. In the Swag Labs website used in this project, the data contained in the .env are public. As such, do not share information on the .env file in a personal project or similar, as it was done above.
+> In the Swag Labs website used in this project, the data contained in the .env are public. As such, do not share information on the .env file in a personal project or similar, as it was done above.
 
 ### 4. Running the tests
 
