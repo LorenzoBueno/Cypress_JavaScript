@@ -23,6 +23,10 @@ making it an ideal playground for learning automation concepts without affecting
 - Practice Git workflows: commits, branching, and push/pull to a remote repository
 - Build a portfolio of automated tests as I progress
 
+## 📚 References
+
+- [Automação com Cypress: Tutorial Completo para Iniciantes](https://www.youtube.com/playlist?list=PLBHHiNoJsoNxnovuGjHsC0oZpN99PMhT9) — by QA Mind7
+
 ## 🚀 Getting Started
 
 ### Prerequisites
