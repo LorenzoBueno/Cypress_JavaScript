@@ -15,7 +15,7 @@ module.exports = defineConfig({
       saveAllAttempts: false
     }
   },
-  allowCypressEnv: false,
+  allowCypressEnv: true,
   screenshotOnRunFailure: true,
   trashAssetsBeforeRuns: true,
 

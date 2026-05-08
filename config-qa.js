@@ -1,11 +1,17 @@
 const {defineConfig } = require('cypress')
 const baseConfig = require('./cypress.config')
+const dotenv = require ('dotenv')
+const path = require ('path')
+
+dotenv.config({
+    path: path.resolve(__dirname, './.env')
+})
 
 const e2e = {
-    baseUrl : 'https://www.qa.saucedemo.com/',
+    baseUrl : process.env.BASE_URL,
     env: {
-        username: 'QA_sauce',
-        password: 'QA_secret'
+        username: process.env.CYPRESS_USER,
+        password: process.env.CYPRESS_PASSWORD
     }
 }
 
