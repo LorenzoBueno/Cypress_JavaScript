@@ -70,12 +70,14 @@ This will install all required packages:
 ### 3. Set up environment variables
 
 Create a `.env` file in the root of the project based on `env-example.txt`:
+```
 BASE_URL=https://www.saucedemo.com/
 CYPRESS_USER=standard_user
 CYPRESS_PASSWORD=secret_sauce
+```
 
 > ⚠️ The `.env` file is ignored by Git and should never be committed.
-> In the Swag Lab website used in this project, the data contained in the .env are public.
+> The .env file is ignored by Git and should never be committed. In the Swag Labs website used in this project, the data contained in the .env are public. As such, do not share information on the .env file in a personal project or similar, as it was done above.
 
 ### 4. Running the tests
 
