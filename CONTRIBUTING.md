@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) installed
+- [Node.js](https://nodejs.org/) installed (v24.15.0 or higher)
 - [Git](https://git-scm.com/) installed
 - Google Chrome installed
 
