@@ -10,7 +10,9 @@
     "cy:open:dev": "cypress open --config-file config-dev.js --browser chrome",
     "cy:open:qa": "cypress open --config-file config-qa.js --browser chrome",
     "cy:run:dev": "cypress run --config-file config-dev.js --browser chrome",
-    "cy:run:qa": "cypress run --config-file config-qa.js --browser chrome"
+    "cy:run:qa": "cypress run --config-file config-qa.js --browser chrome",
+    "precy:run:dev": "rimraf cypress/reports/junit",
+    "precy:run:qa": "rimraf cypress/reports/junit"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,7 @@
     "cypress-mochawesome-reporter": "^4.0.2",
     "cypress-multi-reporters": "^2.0.5",
     "dotenv": "^17.4.2",
-    "mocha-junit-reporter": "^2.2.1"
+    "mocha-junit-reporter": "^2.2.1",
+    "rimraf": "^6.1.3"
   }
 }
